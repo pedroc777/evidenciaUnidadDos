@@ -1,0 +1,10 @@
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+Test Packages/
+Libraries/
+Test Libraries/
+nbactions.xml
+nb-configuration.xml
