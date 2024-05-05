@@ -5,8 +5,14 @@
 package Pantallas;
 
 import Modelo.Empleado;
+import Modelo.JuntaCoordinadoraCarrera;
+import Modelo.RevisionFiguraAcademica;
+import Modelo.RevisionPlanesEstudio;
+import Modelo.RevisionPlanificadores;
+import Operaciones.Escritura;
 import Operaciones.Lectura;
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,14 +46,39 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtFiguraAcademica = new javax.swing.JTextField();
+        txtCoordinadoraCarrera = new javax.swing.JTextField();
+        txtPlanificadores = new javax.swing.JTextField();
+        txtPlanes = new javax.swing.JTextField();
         botonIniciarJornada = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         labelNombreAsesorUno = new javax.swing.JLabel();
         labelNombreEmpleadoDos = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        botonTiempo = new javax.swing.JButton();
+        nombreEmpleadoDos = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtFiguraAcademicaDos = new javax.swing.JTextField();
+        txtCoordinadoraCarreraDos = new javax.swing.JTextField();
+        txtPlanificadoresDos = new javax.swing.JTextField();
+        txtPlanesDos = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        labelNombreEmpleadoTres = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        txtFiguraAcademicaTres = new javax.swing.JTextField();
+        txtCoordinadoraCarreraTres = new javax.swing.JTextField();
+        txtPlanificadoresTres = new javax.swing.JTextField();
+        txtPlanesTres = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        labelMenorTiempo = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1435, 768));
 
@@ -62,13 +93,13 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Revisión de los planes de estudio");
 
-        jTextField1.setEditable(false);
+        txtFiguraAcademica.setEditable(false);
 
-        jTextField2.setEditable(false);
+        txtCoordinadoraCarrera.setEditable(false);
 
-        jTextField3.setEditable(false);
+        txtPlanificadores.setEditable(false);
 
-        jTextField4.setEditable(false);
+        txtPlanes.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,10 +114,10 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
                     .addComponent(jLabel6))
                 .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
+                    .addComponent(txtFiguraAcademica)
+                    .addComponent(txtCoordinadoraCarrera)
+                    .addComponent(txtPlanificadores)
+                    .addComponent(txtPlanes, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,19 +125,19 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFiguraAcademica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCoordinadoraCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPlanificadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPlanes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
@@ -117,11 +148,64 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel2.setText("Nombre del asesor:");
+        jLabel2.setText("Nombre del asesor uno:");
 
         labelNombreAsesorUno.setText("jLabel3");
 
         labelNombreEmpleadoDos.setText("jLabel3");
+
+        jLabel8.setText("Minutos usados para la tarea");
+
+        botonTiempo.setText("Tiempo");
+        botonTiempo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTiempoActionPerformed(evt);
+            }
+        });
+
+        nombreEmpleadoDos.setText("Nombre del asesor dos:");
+
+        jLabel9.setText("Revisión a cada figura académica:");
+
+        jLabel10.setText("Junta con la coordinadora de la carrera:");
+
+        jLabel11.setText("Revisión de los planificaciones:");
+
+        jLabel12.setText("Revisión de los planes de estudio");
+
+        txtFiguraAcademicaDos.setEditable(false);
+
+        txtCoordinadoraCarreraDos.setEditable(false);
+
+        txtPlanificadoresDos.setEditable(false);
+
+        txtPlanesDos.setEditable(false);
+
+        jLabel13.setText("Minutos usados en la tarea");
+
+        jLabel14.setText("Nombre del asesor tres:");
+
+        labelNombreEmpleadoTres.setText("jLabel15");
+
+        jLabel15.setText("Revisión a cada figura académica:");
+
+        jLabel16.setText("Junta con la coordinadora de la carrera:");
+
+        jLabel17.setText("Revisión de los planificadores:");
+
+        jLabel18.setText("Revisión de los planes de estudio:");
+
+        txtFiguraAcademicaTres.setEditable(false);
+
+        txtCoordinadoraCarreraTres.setEditable(false);
+
+        txtPlanificadoresTres.setEditable(false);
+
+        txtPlanesTres.setEditable(false);
+
+        jLabel19.setText("Asesor con menor tiempo:");
+
+        labelMenorTiempo.setText("jLabel20");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,18 +218,54 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelNombreAsesorUno)
-                        .addGap(475, 475, 475)
-                        .addComponent(labelNombreEmpleadoDos))
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel8)
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(232, 232, 232)
-                        .addComponent(botonIniciarJornada)))
+                        .addComponent(botonIniciarJornada)
+                        .addGap(178, 178, 178)
+                        .addComponent(botonTiempo)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nombreEmpleadoDos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelNombreEmpleadoDos))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelNombreEmpleadoTres))
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelMenorTiempo)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel13)
+                        .addComponent(txtPlanesDos)
+                        .addComponent(txtPlanificadoresDos)
+                        .addComponent(txtCoordinadoraCarreraDos)
+                        .addComponent(txtFiguraAcademicaTres)
+                        .addComponent(txtFiguraAcademicaDos)
+                        .addComponent(txtCoordinadoraCarreraTres)
+                        .addComponent(txtPlanificadoresTres, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                    .addComponent(txtPlanesTres, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -157,46 +277,303 @@ public class ModuloJornada extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(labelNombreAsesorUno)
-                    .addComponent(labelNombreEmpleadoDos))
+                    .addComponent(labelNombreEmpleadoDos)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(nombreEmpleadoDos)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(203, 203, 203)
-                .addComponent(botonIniciarJornada)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(txtFiguraAcademicaDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(txtCoordinadoraCarreraDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(txtPlanificadoresDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(txtPlanesDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(111, 111, 111)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(labelNombreEmpleadoTres))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(txtFiguraAcademicaTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(txtCoordinadoraCarreraTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonIniciarJornada)
+                            .addComponent(botonTiempo)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(txtPlanificadoresTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(txtPlanesTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(labelMenorTiempo))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonIniciarJornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarJornadaActionPerformed
-        DefaultTableModel modelo = new DefaultTableModel();
-        tablaEmpleadoUno.setModel(modelo);
-        String[] arregloEncabezados = new String[]{"Tareas asignadas","Minutos"};
+        /**
+         * esta sección es para el primer empleado.
+         * aquí se instancian los hilos y se ponen en marcha.
+         * también se despliegan los tiempos en la pantalla.
+         */
+        RevisionFiguraAcademica revisionUno = new RevisionFiguraAcademica();
+        JuntaCoordinadoraCarrera juntaUno = new JuntaCoordinadoraCarrera();
+        RevisionPlanificadores revisionPlanUno = new RevisionPlanificadores();
+        RevisionPlanesEstudio revisionEstudioUno = new RevisionPlanesEstudio();
         
-        for(int i = 0; i < arregloEncabezados.length; i++){
-            modelo.addColumn(arregloEncabezados[i]);
+        
+        revisionUno.start();
+        juntaUno.start();
+        revisionPlanUno.start();
+        revisionEstudioUno.start();
+        
+        
+        try{
+            juntaUno.join();
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+        Thread.State state = juntaUno.getState();
+        System.out.println(state);
+        if(state.toString() == "TERMINATED"){
+            System.out.println("Se acabó");
+            revisionUno.stop();
+            revisionPlanUno.stop();
+            revisionEstudioUno.stop();
+        }
+        
+        int totalMinutosRevisionUno = revisionUno.getTotalMinutos();
+        int totalMinutosPlan = revisionPlanUno.getTotalMinutos();
+        int totalMinutosEstudio = revisionEstudioUno.getTotalMinutos();
+        
+        txtFiguraAcademica.setText(String.valueOf(totalMinutosRevisionUno));
+        txtCoordinadoraCarrera.setText("0");
+        txtPlanificadores.setText(String.valueOf(totalMinutosPlan));
+        txtPlanes.setText(String.valueOf(totalMinutosEstudio));
+        
+        
+        /**
+         * sección para el asesor dos
+         */
+        RevisionFiguraAcademica revisionDos = new RevisionFiguraAcademica();
+        JuntaCoordinadoraCarrera juntaDos = new JuntaCoordinadoraCarrera();
+        RevisionPlanificadores revisionPlanDos = new RevisionPlanificadores();
+        RevisionPlanesEstudio revisionEstudioDos = new RevisionPlanesEstudio();
+        
+        
+        revisionDos.start();
+        juntaDos.start();
+        revisionPlanDos.start();
+        revisionEstudioDos.start();
+        
+        
+        try{
+            juntaDos.join();
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+        Thread.State stateDos = juntaDos.getState();
+        System.out.println(state);
+        if(stateDos.toString() == "TERMINATED"){
+            System.out.println("Se acabó");
+            revisionDos.stop();
+            revisionPlanDos.stop();
+            revisionEstudioDos.stop();
+        }
+        
+        int totalMinutosRevisionDos = revisionDos.getTotalMinutos();
+        int totalMinutosPlanDos = revisionPlanDos.getTotalMinutos();
+        int totalMinutosEstudioDos = revisionEstudioDos.getTotalMinutos();
+        
+        txtFiguraAcademicaDos.setText(String.valueOf(totalMinutosRevisionDos));
+        txtCoordinadoraCarreraDos.setText("0");
+        txtPlanificadoresDos.setText(String.valueOf(totalMinutosPlanDos));
+        txtPlanesDos.setText(String.valueOf(totalMinutosEstudioDos));
+        
+        /**
+         * sección para el asesor tres
+         */
+        RevisionFiguraAcademica revisionTres = new RevisionFiguraAcademica();
+        JuntaCoordinadoraCarrera juntaTres = new JuntaCoordinadoraCarrera();
+        RevisionPlanificadores revisionPlanTres = new RevisionPlanificadores();
+        RevisionPlanesEstudio revisionEstudioTres = new RevisionPlanesEstudio();
+        
+        
+        revisionTres.start();
+        juntaTres.start();
+        revisionPlanTres.start();
+        revisionEstudioTres.start();
+        
+        
+        try{
+            juntaTres.join();
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+        Thread.State stateTres = juntaTres.getState();
+        System.out.println(stateTres);
+        if(stateDos.toString() == "TERMINATED"){
+            System.out.println("Se acabó");
+            revisionTres.stop();
+            revisionPlanTres.stop();
+            revisionEstudioTres.stop();
+        }
+        
+        int totalMinutosRevisionTres = revisionTres.getTotalMinutos();
+        int totalMinutosPlanTres = revisionPlanTres.getTotalMinutos();
+        int totalMinutosEstudioTres = revisionEstudioTres.getTotalMinutos();
+        
+        txtFiguraAcademicaTres.setText(String.valueOf(totalMinutosRevisionTres));
+        txtCoordinadoraCarreraTres.setText("0");
+        txtPlanificadoresTres.setText(String.valueOf(totalMinutosPlanTres));
+        txtPlanesTres.setText(String.valueOf(totalMinutosEstudioTres));
+        
+        
+        int sumaAsesorUno = totalMinutosRevisionUno + totalMinutosPlan+ totalMinutosEstudio;
+        int sumaAsesorDos = totalMinutosRevisionDos + totalMinutosPlanDos+ totalMinutosEstudioDos;
+        int sumaAsesorTres = totalMinutosRevisionTres + totalMinutosPlanTres+ totalMinutosEstudioTres;
+ 
+        int[] arr = {sumaAsesorUno, sumaAsesorDos, sumaAsesorTres};
+
+        
+        int minIndex = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+                break;
+            }
+        }
+        /**
+         * aquí se determina el que hizo menos tiempo
+         */
+        Lectura leerEmpleado = new Lectura();
+        LinkedList<Empleado> nombreAsesor = new LinkedList();
+        nombreAsesor = leerEmpleado.lecturaEmpleado();
+        
+        if(minIndex == 0){
+            labelMenorTiempo.setText(nombreAsesor.get(minIndex).getNombreCompleto());
+        }
+        else if(minIndex == 0){
+            labelMenorTiempo.setText(nombreAsesor.get(minIndex).getNombreCompleto());
+        }
+        else{
+            labelMenorTiempo.setText(nombreAsesor.get(minIndex).getNombreCompleto());
         }
     }//GEN-LAST:event_botonIniciarJornadaActionPerformed
+
+    private void botonTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTiempoActionPerformed
+        Escritura escribirTiempos = new Escritura();
+        /**
+         * asesor uno
+         */
+        escribirTiempos.escrituraTiempos(labelNombreAsesorUno.getText(),
+                txtFiguraAcademica.getText(),txtCoordinadoraCarrera.getText(),
+                txtPlanificadores.getText(),txtPlanes.getText());
+        
+        escribirTiempos.generarPdfPoblacion(labelNombreAsesorUno.getText(),
+                txtFiguraAcademica.getText(),txtCoordinadoraCarrera.getText(),
+                txtPlanificadores.getText(),txtPlanes.getText());
+        
+        /**
+         * asesor dos
+         */
+        escribirTiempos.escrituraTiempos(labelNombreEmpleadoDos.getText(),
+                txtFiguraAcademicaDos.getText(),txtCoordinadoraCarreraDos.getText(),
+                txtPlanificadoresDos.getText(),txtPlanesDos.getText());
+        
+        escribirTiempos.generarPdfPoblacion(labelNombreEmpleadoDos.getText(),
+                txtFiguraAcademicaDos.getText(),txtCoordinadoraCarreraDos.getText(),
+                txtPlanificadoresDos.getText(),txtPlanesDos.getText());
+        /**
+         * asesor tres
+         */
+        escribirTiempos.escrituraTiempos(labelNombreEmpleadoTres.getText(),
+                txtFiguraAcademicaTres.getText(),txtCoordinadoraCarreraTres.getText(),
+                txtPlanificadoresTres.getText(),txtPlanesTres.getText());
+        
+        escribirTiempos.generarPdfPoblacion(labelNombreEmpleadoTres.getText(),
+                txtFiguraAcademicaTres.getText(),txtCoordinadoraCarreraTres.getText(),
+                txtPlanificadoresTres.getText(),txtPlanesTres.getText());
+        
+    }//GEN-LAST:event_botonTiempoActionPerformed
     public void procesos(){
         Lectura leerEmpleado = new Lectura();
         LinkedList<Empleado> nombreAsesor = new LinkedList();
         nombreAsesor = leerEmpleado.lecturaEmpleado();
         labelNombreAsesorUno.setText(nombreAsesor.get(0).getNombreCompleto());
+        labelNombreEmpleadoDos.setText(nombreAsesor.get(1).getNombreCompleto());
+        labelNombreEmpleadoTres.setText(nombreAsesor.get(2).getNombreCompleto());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonIniciarJornada;
+    private javax.swing.JButton botonTiempo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel labelMenorTiempo;
     private javax.swing.JLabel labelNombreAsesorUno;
     private javax.swing.JLabel labelNombreEmpleadoDos;
+    private javax.swing.JLabel labelNombreEmpleadoTres;
+    private javax.swing.JLabel nombreEmpleadoDos;
+    private javax.swing.JTextField txtCoordinadoraCarrera;
+    private javax.swing.JTextField txtCoordinadoraCarreraDos;
+    private javax.swing.JTextField txtCoordinadoraCarreraTres;
+    private javax.swing.JTextField txtFiguraAcademica;
+    private javax.swing.JTextField txtFiguraAcademicaDos;
+    private javax.swing.JTextField txtFiguraAcademicaTres;
+    private javax.swing.JTextField txtPlanes;
+    private javax.swing.JTextField txtPlanesDos;
+    private javax.swing.JTextField txtPlanesTres;
+    private javax.swing.JTextField txtPlanificadores;
+    private javax.swing.JTextField txtPlanificadoresDos;
+    private javax.swing.JTextField txtPlanificadoresTres;
     // End of variables declaration//GEN-END:variables
 }
